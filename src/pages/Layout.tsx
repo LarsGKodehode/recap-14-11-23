@@ -1,25 +1,31 @@
-import React from 'react'
-import style from './Layout.module.css'
-
-import { FaHome, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import {
+  Outlet,
+  Link,
+} from 'react-router-dom'
+import { FaHome, FaGithub, FaLinkedinIn, FaInfo } from "react-icons/fa";
 import { Logo } from '../components/Logo/Logo';
 
-type LayoutProps = {
-  children: React.ReactNode
-}
+import style from './Layout.module.css'
 
-export function Layout(properties: LayoutProps) {
-  const { children } = properties
-
+export function Layout() {
   return (
     <div className={style.app}>
-      <header>
-        <Logo />
+      <header className={style.header}>
+        <a href="/">
+          <Logo />
+        </a>
 
-        <nav>
+        <nav className={style.navbar}>
           <ul>
             <li>
-              <FaHome size="4rem" />
+              <Link to="/">
+                <FaHome size="4rem" />
+              </Link>
+            </li>
+            <li>
+              <Link to="/about">
+                <FaInfo size="4rem" />
+              </Link>
             </li>
             <li>
               <FaGithub size="4rem" />
@@ -32,7 +38,7 @@ export function Layout(properties: LayoutProps) {
       </header>
 
       <main className={style.content}>
-        {children}
+        <Outlet />
       </main>
 
       <footer>

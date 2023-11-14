@@ -1,4 +1,5 @@
 import style from './LandingPage.module.css'
+console.log(style)
 
 export function LandingPage() {
   return (

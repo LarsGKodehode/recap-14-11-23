@@ -7,3 +7,17 @@
 .content {
   flex-grow: 1;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+}
+
+.navbar {}
+
+.navbar > ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}

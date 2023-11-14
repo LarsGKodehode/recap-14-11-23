@@ -1,6 +1,13 @@
+import React from 'react'
 import style from './Layout.module.css'
 
-export function Layout() {
+type LayoutProps = {
+  children: React.ReactNode
+}
+
+export function Layout(properties: LayoutProps) {
+  const { children } = properties
+
   return (
     <div className={style.app}>
       <header>
@@ -8,7 +15,7 @@ export function Layout() {
       </header>
 
       <main className={style.content}>
-        <p>Content Here</p>
+        {children}
       </main>
 
       <footer>
